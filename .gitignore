@@ -1,0 +1,16 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# Ambiente virtual
+Scripts/
+Lib/
+Include/
+pyvenv.cfg
+
+# Arquivos Python
+__pycache__/
+*.pyc
+
+# Arquivos privados
+.env
+
+# Banco de dados local
+db.sqlite3
