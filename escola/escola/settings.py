@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-vbty$i-0#l&mk4=1%na7222fs@+ffyc2gbcg#$(rog^k5!0e(=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'sistema-escola-nu.vercel.app',
+    'localhost',
+    '127.0.01',
+]
 
 
 # Application definition
