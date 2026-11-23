@@ -19,17 +19,24 @@ body{
 
     display: grid;
     grid-template-columns: 250px 1fr;
-    grid-template-rows: 100px 1fr 50px;
+    grid-template-rows: 80px 1fr 50px;
 }
 
 .titulo-principal{
-    background-color: #7C3AED;
+    background-color: white;
+    
     grid-column: 1 / 3;
     grid-row: 1;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+    border-bottom: 1px solid #E2E8F0;
 }
 
 .titulo-principal h1{
-    color: white;
+    color: #111827;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +48,7 @@ body{
     grid-row: 2;
     background-color: white;
     padding: 25px;
+     border-right: 1px solid #E2E8F0;
 }
 
 .lado-esquerdo h3 {
@@ -67,10 +75,12 @@ body{
     text-decoration: none;
     text-align: center;
 
-    border: 2px solid #8B5CF6;
-    border-radius: 5px;
+    border: 10px solid #0F766E;
+    border-radius: 10px;
 
-    background-color: #8B5CF6;;
+    background-color: #0F766E;
+
+    font-weight: bold;
 }
 
 .centro{
@@ -83,6 +93,7 @@ body{
 
     grid-column: 2;
     grid-row: 2;
+
 }
 
 .centro p{
@@ -97,11 +108,13 @@ body{
 
 .formulario{
     width: 100%;
-    max-width: 600px;
+    max-width: 650px;
     border-radius: 10px;
     padding: 20px;
     background-color: #FFFFFF;
     color: #111827;
+
+     transform: translateX(-125px);
 }
 
 .formulario input {
@@ -123,6 +136,10 @@ body{
     color: #64748B;
 }
 
+.formulario label{
+    font-weight: bold;
+}
+
 .lista {
     width: 100%;
     max-width: 750px;
@@ -130,6 +147,8 @@ body{
     padding: 25px;
     border-radius: 10px;
     color: #111827;
+
+     transform: translateX(-125px);
 }
 
 .lista h2 {
@@ -167,8 +186,8 @@ body{
     color: #111827;
 }
 
-.idade {
-    color: #7C3AED;
+.dados {
+    color: #0F766E;
     font-size: 14px;
     font-weight: 500;
 }
@@ -177,7 +196,7 @@ body{
     grid-column: 1/3;
     border: none;
     border-radius: 10px;
-    background-color: #7C3AED;
+    background-color: #0F766E;
     color: #FFFFFF;
     padding: 15px;
     margin-top: 10px;
@@ -191,7 +210,7 @@ body{
 }
 
 .rodape{
-    background-color: #F1F5F9;
+    background-color: white;
 
     display: flex;
     justify-content: center;
@@ -199,8 +218,12 @@ body{
 
     grid-column: 1 / 3;
     grid-row: 3;
+
+    border-top: 1px solid #E2E8F0;
 }
 
 .rodape p{
     color: #64748B;
+    font-weight: bold;
+    
 }

@@ -9,7 +9,28 @@
 </head>
 <body>
 
-    <header class="titulo-principal"></header>
+    <header class="titulo-principal">
+        <h1>Escola</h1>
+    </header>
+
+    <aside class="lado-esquerdo">
+        <nav>
+
+            <ul>
+                <li>
+                    <a href="{% url 'lista_alunos' %}">Lista de alunos</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="{% url 'cadastrar_alunos' %}">Cadastrar aluno</a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </aside>
 
     <main class="centro">
         
@@ -24,7 +45,7 @@
             {% for aluno in alunos %}
             <li>
                 <span class="nome">{{ aluno.nome }}</span>
-                <span class="idade">{{ aluno.idade }} anos</span>
+                <span class="dados">{{ aluno.idade }} anos</span>
             </li>
             {% endfor%}
             </ul>
