@@ -19,3 +19,12 @@ def cadastrar(request):
         professor.save()
 
     return render(request, 'professores/cadastrar.html')
+
+def lista(request):
+    professor = Professor.objects.all()
+    return render(
+        request, 
+        "professores/lista.html",
+        {"professor":professor}
+
+    )
