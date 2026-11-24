@@ -1,0 +1,227 @@
+/*
+Source - https://stackoverflow.com/a/14676665
+Posted by ModernDesigner, modified by community. See post 'Timeline' for change history
+Retrieved 2026-11-20, License - CC BY-SA 4.0
+*/
+
+@import url('https://googleapis.com');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Google sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 80px 1fr 50px;
+}
+
+.titulo-principal{
+    background-color: white;
+    
+    grid-column: 1 / 3;
+    grid-row: 1;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.titulo-principal h1{
+    color: #111827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.lado-esquerdo{
+    grid-column: 1;
+    grid-row: 2;
+    background-color: white;
+    padding: 25px;
+     border-right: 1px solid #E2E8F0;
+}
+
+.lado-esquerdo h3 {
+    margin-bottom: 20px;
+    color: #CBD5E1;
+}
+
+.lado-esquerdo ul {
+    list-style: none;
+}
+
+.lado-esquerdo li {
+    margin-bottom: 10px;
+}
+
+.lado-esquerdo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    color: white;
+    text-decoration: none;
+    text-align: center;
+
+    border: 10px solid #0F766E;
+    border-radius: 10px;
+
+    background-color: #0F766E;
+
+    font-weight: bold;
+}
+
+.centro{
+    background-color: #F1F5F9;
+    padding: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    grid-column: 2;
+    grid-row: 2;
+
+}
+
+.centro p{
+    margin-top: 10px;
+}
+
+.centro hr{
+    border: none;
+    border-top: 1px solid #E2E8F0;
+    margin: 15px 0;
+}
+
+.formulario{
+    width: 100%;
+    max-width: 650px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    color: #111827;
+}
+
+.formulario input {
+    border: 1px solid #D1D5DB;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+
+.formulario form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formulario p{
+    color: #64748B;
+}
+
+.formulario label{
+    font-weight: bold;
+}
+
+.lista {
+    width: 100%;
+    max-width: 750px;
+    background-color: #FFFFFF;
+    padding: 25px;
+    border-radius: 10px;
+    color: #111827;
+
+     transform: translateX(-125px);
+}
+
+.lista h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.lista p {
+    color: #64748B;
+    font-size: 14px;
+}
+
+.lista hr {
+    border: none;
+    border-top: 1px solid #E2E8F0;
+    margin: 20px 0;
+}
+
+.lista ul {
+    list-style: none;
+}
+
+.lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.nome {
+    font-weight: 600;
+    color: #111827;
+}
+
+.dados {
+    color: #0F766E;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.botao{
+    grid-column: 1/3;
+    border: none;
+    border-radius: 10px;
+    background-color: #0F766E;
+    color: #FFFFFF;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+.botao:hover{
+    cursor: pointer;
+}
+
+.rodape{
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1 / 3;
+    grid-row: 3;
+
+    border-top: 1px solid #E2E8F0;
+}
+
+.rodape p{
+    color: #64748B;
+    font-weight: bold;
+    
+}

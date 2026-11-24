@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'professores/styles.css' %}">
+    <title>Cadastrar professor</title>
+</head>
+<body>
+
+    <header class="titulo-principal">
+        <h1>Escola</h1>
+    </header>
+
+    <aside class="lado-esquerdo">
+        <nav>
+
+            <ul>
+                <li>
+                    <a href="{% url 'lista_alunos' %}">Lista de alunos</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="{% url 'cadastrar_alunos' %}">Cadastrar aluno</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="{% url 'cadastrar_professores' %}">Cadastrar professor</a>
+                </li>
+            </ul>
+            
+        </nav>
+
+    </aside>
+
+    <main class="centro">
+
+        <div class="formulario">
+
+            <h2>Cadastro de professores</h2>
+            <p>Preencha os dados para cadastrar um novo professor.</p>
+
+            <hr>
+
+            <form method="POST">
+                {% csrf_token%}
+
+                <label for="nome">Nome do professor</label>
+                <input type="text" name="nome" placeholder="Digite o nome completo" required>
+
+                <label for="cpf">CPF</label>
+                <input type="text" name="cpf" placeholder="00000000000" required>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="exemplo@email.com" required>
+
+                <label for="telefone">Telefone</label>
+                <input type="text" name="telefone" placeholder="(00) 00000-0000">
+
+                <input class="botao" type="submit" value="Cadastrar professor">
+             </form>
+
+        </div> 
+
+    </main>
+
+    <footer class="rodape">
+        <p>Sistema cadastro de professores</p>
+    </footer>
+
+</body>
+</html>
