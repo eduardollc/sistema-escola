@@ -226,16 +226,15 @@ body{
     
 }
 
-/* RESPONSIVIDADE PARA CELULARES */
 @media (max-width: 768px) {
 
     body {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr auto;
+        grid-template-columns: 115px minmax(0, 1fr);
+        grid-template-rows: auto 1fr auto;
     }
 
     .titulo-principal {
-        grid-column: 1;
+        grid-column: 1 / 3;
         grid-row: 1;
     }
 
@@ -246,21 +245,36 @@ body{
     }
 
     .centro {
-        grid-column: 1;
-        grid-row: 3;
+        grid-column: 2;
+        grid-row: 2;
         width: 100%;
-        padding: 20px;
+        min-width: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        transform: none;
     }
 
     .formulario {
         width: 100%;
-        max-width: 600px;
+        max-width: 100%;
+        box-sizing: border-box;
         transform: none;
     }
 
-    .rodape {
-        grid-column: 1;
-        grid-row: 4;
+    .lado-esquerdo a {
+        display: block;
+        font-size: 12px;
+        padding: 12px 5px;
+        text-align: center;
     }
 
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .rodape {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
 }
