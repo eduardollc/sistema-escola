@@ -225,3 +225,42 @@ body{
     font-weight: bold;
     
 }
+
+/* RESPONSIVIDADE PARA CELULARES */
+@media (max-width: 768px) {
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    .titulo-principal {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .lado-esquerdo {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    .centro {
+        grid-column: 1;
+        grid-row: 3;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .formulario {
+        width: 100%;
+        max-width: 600px;
+        transform: none;
+    }
+
+    .rodape {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+}
