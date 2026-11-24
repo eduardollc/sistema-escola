@@ -1,30 +1,24 @@
-/*
-Source - https://stackoverflow.com/a/14676665
-Posted by ModernDesigner, modified by community. See post 'Timeline' for change history
-Retrieved 2026-11-20, License - CC BY-SA 4.0
-*/
 
-@import url('https://googleapis.com');
+/* CONFIGURAÇÕES GERAIS */
 
-
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Google sans', sans-serif;
+    font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
 
-body{
+body {
     min-height: 100vh;
-
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 250px minmax(0, 1fr);
     grid-template-rows: 80px 1fr 50px;
 }
 
-.titulo-principal{
+/* CABEÇALHO */
+
+.titulo-principal {
     background-color: white;
-    
     grid-column: 1 / 3;
     grid-row: 1;
 
@@ -35,7 +29,7 @@ body{
     border-bottom: 1px solid #E2E8F0;
 }
 
-.titulo-principal h1{
+.titulo-principal h1 {
     color: #111827;
     display: flex;
     justify-content: center;
@@ -43,12 +37,14 @@ body{
     padding: 25px;
 }
 
-.lado-esquerdo{
+/* MENU LATERAL */
+
+.lado-esquerdo {
     grid-column: 1;
     grid-row: 2;
     background-color: white;
     padding: 25px;
-     border-right: 1px solid #E2E8F0;
+    border-right: 1px solid #E2E8F0;
 }
 
 .lado-esquerdo h3 {
@@ -68,7 +64,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 100%;
 
     color: white;
@@ -77,13 +72,13 @@ body{
 
     border: 10px solid #0F766E;
     border-radius: 10px;
-
     background-color: #0F766E;
-
     font-weight: bold;
 }
 
-.centro{
+/* CONTEÚDO PRINCIPAL */
+
+.centro {
     background-color: #F1F5F9;
     padding: 25px;
 
@@ -93,20 +88,22 @@ body{
 
     grid-column: 2;
     grid-row: 2;
-
+    min-width: 0;
 }
 
-.centro p{
+.centro p {
     margin-top: 10px;
 }
 
-.centro hr{
+.centro hr {
     border: none;
     border-top: 1px solid #E2E8F0;
     margin: 15px 0;
 }
 
-.formulario{
+/* FORMULÁRIO */
+
+.formulario {
     width: 100%;
     max-width: 650px;
     border-radius: 10px;
@@ -121,22 +118,23 @@ body{
     max-width: 600px;
     padding: 15px;
     border-radius: 10px;
-
 }
 
-.formulario form{
+.formulario form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.formulario p{
+.formulario p {
     color: #64748B;
 }
 
-.formulario label{
+.formulario label {
     font-weight: bold;
 }
+
+/* LISTAGEM */
 
 .lista {
     width: 100%;
@@ -146,7 +144,7 @@ body{
     border-radius: 10px;
     color: #111827;
 
-     transform: translateX(-125px);
+    transform: translateX(-125px);
 }
 
 .lista h2 {
@@ -173,6 +171,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
+
     padding: 15px;
     border: 1px solid #E2E8F0;
     border-radius: 8px;
@@ -190,8 +190,9 @@ body{
     font-weight: 500;
 }
 
-.botao{
-    grid-column: 1/3;
+/* BOTÃO */
+
+.botao {
     border: none;
     border-radius: 10px;
     background-color: #0F766E;
@@ -200,14 +201,15 @@ body{
     margin-top: 10px;
     font-size: 15px;
     font-weight: bold;
-    
 }
 
-.botao:hover{
+.botao:hover {
     cursor: pointer;
 }
 
-.rodape{
+/* RODAPÉ */
+
+.rodape {
     background-color: white;
 
     display: flex;
@@ -220,61 +222,128 @@ body{
     border-top: 1px solid #E2E8F0;
 }
 
-.rodape p{
+.rodape p {
     color: #64748B;
     font-weight: bold;
-    
 }
+
+/* RESPONSIVIDADE PARA CELULARES */
 
 @media (max-width: 768px) {
 
     body {
-        grid-template-columns: 115px minmax(0, 1fr);
-        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 135px minmax(0, 1fr);
+        grid-template-rows: 80px auto 50px;
+        overflow-x: hidden;
     }
+
+    /* CABEÇALHO */
 
     .titulo-principal {
         grid-column: 1 / 3;
         grid-row: 1;
     }
 
+    .titulo-principal h1 {
+        font-size: 32px;
+        padding: 20px;
+    }
+
+    /* MENU */
+
     .lado-esquerdo {
         grid-column: 1;
         grid-row: 2;
+        width: 135px;
+        padding: 20px 10px;
+    }
+
+    .lado-esquerdo nav,
+    .lado-esquerdo ul,
+    .lado-esquerdo li {
         width: 100%;
     }
+
+    .lado-esquerdo a {
+        width: 100%;
+        padding: 10px 3px;
+        border-width: 3px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    /* CONTEÚDO */
 
     .centro {
         grid-column: 2;
         grid-row: 2;
         width: 100%;
         min-width: 0;
-        padding: 10px;
-        box-sizing: border-box;
-        transform: none;
+        padding: 12px;
     }
+
+    /* FORMULÁRIO */
 
     .formulario {
         width: 100%;
         max-width: 100%;
-        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .formulario h2 {
+        font-size: 24px;
+    }
+
+    .formulario p {
+        font-size: 16px;
+    }
+
+    .formulario label {
+        font-size: 16px;
+    }
+
+    .formulario input {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    /* LISTAGEM */
+
+    .lista {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
         transform: none;
     }
 
-    .lado-esquerdo a {
-        display: block;
-        font-size: 12px;
-        padding: 12px 5px;
-        text-align: center;
+    .lista h2 {
+        font-size: 20px;
     }
 
-    input {
-        width: 100%;
-        box-sizing: border-box;
+    .lista li {
+        flex-wrap: wrap;
+        padding: 12px;
     }
+
+    .nome,
+    .dados {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    /* BOTÃO */
+
+    .botao {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    /* RODAPÉ */
 
     .rodape {
         grid-column: 1 / 3;
         grid-row: 3;
     }
+
 }
