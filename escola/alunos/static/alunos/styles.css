@@ -171,6 +171,9 @@ body {
     color: #0F766E;
     font-size: 14px;
     font-weight: 500;
+
+    display: flex;
+    align-items: center;
 }
 
 /* BOTÃO */
@@ -268,44 +271,35 @@ body {
 
     /* FORMULÁRIO */
 
-    .formulario {
+    .painel {
         width: 100%;
         max-width: 100%;
         padding: 15px;
     }
 
-    .formulario h2 {
+    .painel h2 {
         font-size: 24px;
     }
 
-    .formulario p {
+    .painel p {
         font-size: 16px;
     }
 
-    .formulario label {
+    .painel label {
         font-size: 16px;
     }
 
-    .formulario input {
+    .painel input {
         width: 100%;
         max-width: 100%;
         padding: 12px;
     }
 
-    /* LISTAGEM */
-
-    .lista {
-        width: 100%;
-        max-width: 100%;
-        padding: 15px;
-        transform: none;
-    }
-
-    .lista h2 {
+    .painel h2 {
         font-size: 20px;
     }
 
-    .lista li {
+    .painel li {
         flex-wrap: wrap;
         padding: 12px;
     }
