@@ -44,8 +44,7 @@ def pesquisar(request):
     if termo:
         alunos = Aluno.objects.filter(
             Q(nome__icontains=termo) |
-            Q(matricula__icontains=termo) |
-            Q(cpf__icontains=termo)
+            Q(matricula__icontains=termo)
         )
 
     return render (request, 'alunos/pesquisar.html', {
