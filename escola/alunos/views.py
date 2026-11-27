@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Aluno
+from django.db.models import Q
 
 # Create your views here.
 
@@ -34,3 +35,20 @@ def lista(request):
         "alunos/lista.html",
         {"alunos": alunos}
     )
+
+def pesquisar(request):
+    termo = request.GET.get('q', '')
+
+    alunos = []
+
+    if termo:
+        alunos = Aluno.objects.filter(
+            Q(nome__icontains=termo) |
+            Q(matricula__icontains=termo) |
+            Q(cpf__icontains=termo)
+        )
+
+    return render (request, 'alunos/pesquisar.html', {
+        'alunos':alunos,
+        'termo':termo
+    })

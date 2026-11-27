@@ -1,0 +1,106 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'alunos/styles.css' %}">
+    <title>Lista de alunos</title>
+</head>
+<body>
+
+    <header class="titulo-principal">
+        <h1>Escola</h1>
+    </header>
+
+    <aside class="lado-esquerdo">
+        <nav>
+
+            <ul>
+                <li>
+                    <a href="{% url 'lista_alunos' %}">Lista de alunos</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="{% url 'cadastrar_alunos' %}">Cadastrar aluno</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="{% url 'pesquisar_alunos' %}">Pesquisar Alunos</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="{% url 'cadastrar_professores' %}">Cadastrar professor</a>
+                </li>
+            </ul>
+
+            <ul>
+                <li>
+                    <a href="{% url 'lista_professores' %}">Lista professor</a>
+                </li>
+            </ul>
+
+            
+
+        </nav>
+    </aside>
+
+    <main class="centro">
+
+        <div class="painel">
+
+            <h2>Alunos cadastrados</h2>
+            <p>Confira os alunos registrados no sistema</p>
+
+            <hr>
+
+            <!-- Campo de pesquisa -->
+            <form class="campo-pesquisa" method="GET">
+                <input
+                    type="text"
+                    name="q"
+                    placeholder="Pesquisar aluno pelo nome, CPF ou matricula"
+                    value="{{ termo }}"
+                >
+
+                <button class="botao" type="submit">
+                    Pesquisar
+                </button>
+            </form>
+
+            <hr>
+
+            <ul>
+
+                {% for aluno in alunos %}
+
+                <li>
+                    <span class="nome">{{ aluno.nome }}</span>
+                    <span class="dados">{{ aluno.idade }} anos</span>
+                </li>
+
+                {% empty %}
+
+                <p>Nenhum aluno encontrado.</p>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Sistema pesquisa de alunos</p>
+    </footer>
+
+</body>
+</html>

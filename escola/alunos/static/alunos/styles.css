@@ -101,9 +101,9 @@ body {
     margin: 15px 0;
 }
 
-/* FORMULÁRIO */
+/* Painel*/
 
-.formulario {
+.painel {
     width: 100%;
     max-width: 650px;
     border-radius: 10px;
@@ -112,7 +112,7 @@ body {
     color: #111827;
 }
 
-.formulario input {
+.painel input {
     border: 1px solid #D1D5DB;
     width: 100%;
     max-width: 600px;
@@ -120,54 +120,37 @@ body {
     border-radius: 10px;
 }
 
-.formulario form {
+.painel form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.formulario p {
-    color: #64748B;
-}
-
-.formulario label {
+.painel label {
     font-weight: bold;
 }
 
-/* LISTAGEM */
-
-.lista {
-    width: 100%;
-    max-width: 750px;
-    background-color: #FFFFFF;
-    padding: 25px;
-    border-radius: 10px;
-    color: #111827;
-
-    transform: translateX(-125px);
-}
-
-.lista h2 {
+.painel h2 {
     font-size: 22px;
     margin-bottom: 8px;
 }
 
-.lista p {
+.painel p {
     color: #64748B;
     font-size: 14px;
 }
 
-.lista hr {
+.painel hr {
     border: none;
     border-top: 1px solid #E2E8F0;
     margin: 20px 0;
 }
 
-.lista ul {
+.painel ul {
     list-style: none;
 }
 
-.lista li {
+.painel li {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -206,6 +189,7 @@ body {
 .botao:hover {
     cursor: pointer;
 }
+
 
 /* RODAPÉ */
 
